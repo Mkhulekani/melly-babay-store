@@ -1,0 +1,246 @@
+/* ============================================================
+   MELLYBABY DESIGN SYSTEM — globals.css
+   All CSS variables, resets, and base utility styles.
+   ============================================================ */
+
+/* ── Design Tokens ─────────────────────────────────────────── */
+:root {
+  /* Brand colours */
+  --cream:        #FDF6EE;
+  --peach:        #F4A07A;
+  --peach-dark:   #D4724A;
+  --peach-light:  #FDE8D8;
+  --rose:         #E8706A;
+  --gold:         #C9963A;
+  --sage:         #7A9E7E;
+  --bg2:          #FFF9F5;
+
+  /* Neutrals */
+  --text:         #2A1F1A;
+  --muted:        #8A7570;
+  --border:       #EDE3DA;
+  --white:        #FFFFFF;
+
+  /* Typography */
+  --font-serif:   'Playfair Display', Georgia, serif;
+  --font-sans:    'DM Sans', system-ui, sans-serif;
+
+  /* Spacing scale */
+  --space-xs:  4px;
+  --space-sm:  8px;
+  --space-md:  16px;
+  --space-lg:  24px;
+  --space-xl:  40px;
+
+  /* Radius scale */
+  --radius-sm:  8px;
+  --radius-md:  12px;
+  --radius-lg:  18px;
+  --radius-xl:  22px;
+  --radius-full: 999px;
+
+  /* Shadows */
+  --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.06);
+  --shadow-hover: 0 16px 40px rgba(212, 114, 74, 0.14);
+  --shadow-chat: 0 12px 40px rgba(0, 0, 0, 0.14);
+}
+
+/* ── Reset ─────────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--cream);
+  color: var(--text);
+  overflow-x: hidden;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+button {
+  cursor: pointer;
+  font-family: var(--font-sans);
+}
+
+input,
+select,
+textarea {
+  font-family: var(--font-sans);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ── Utility: Typography ───────────────────────────────────── */
+.serif {
+  font-family: var(--font-serif);
+}
+
+.text-muted {
+  color: var(--muted);
+}
+
+.text-peach {
+  color: var(--peach-dark);
+}
+
+/* ── Utility: Buttons ─────────────────────────────────────── */
+.btn-primary {
+  background: var(--peach-dark);
+  color: var(--white);
+  border: none;
+  padding: 13px 26px;
+  border-radius: var(--radius-full);
+  font-size: 14px;
+  font-weight: 600;
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-primary:hover {
+  background: var(--rose);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(212, 114, 74, 0.3);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--peach-dark);
+  border: 2px solid var(--peach-dark);
+  padding: 11px 24px;
+  border-radius: var(--radius-full);
+  font-size: 14px;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.btn-outline:hover {
+  background: var(--peach-light);
+}
+
+/* ── Utility: Badges ──────────────────────────────────────── */
+.badge {
+  display: inline-block;
+  padding: 3px 9px;
+  border-radius: var(--radius-full);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+.badge--new  { background: #E8F5E9; color: #2E7D32; }
+.badge--sale { background: var(--rose); color: var(--white); }
+.badge--hot  { background: #FF6B35; color: var(--white); }
+
+/* ── Utility: Stock pills ─────────────────────────────────── */
+.stock-pill {
+  font-size: 10px;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: var(--radius-full);
+}
+
+.stock-pill--in  { background: #E8F5E9; color: #2E7D32; }
+.stock-pill--out { background: #FFEBEE; color: #C62828; }
+
+/* ── Utility: Form elements ───────────────────────────────── */
+.form-input {
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 10px 14px;
+  font-size: 13px;
+  outline: none;
+  width: 100%;
+  transition: border-color 0.2s;
+  background: var(--white);
+}
+
+.form-input:focus {
+  border-color: var(--peach-dark);
+}
+
+/* ── Utility: Cards ───────────────────────────────────────── */
+.card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-card);
+}
+
+/* ── Utility: Section ─────────────────────────────────────── */
+.section {
+  padding: 36px 28px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 24px;
+}
+
+.section-title {
+  font-family: var(--font-serif);
+  font-size: 26px;
+  font-weight: 900;
+  color: var(--text);
+}
+
+.section-title span {
+  color: var(--peach-dark);
+}
+
+/* ── Utility: Overlay ─────────────────────────────────────── */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(30, 10, 5, 0.5);
+  z-index: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+
+/* ── Utility: Scrollbar hide ──────────────────────────────── */
+.scroll-hide {
+  scrollbar-width: none;
+}
+.scroll-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* ── Responsive helpers ───────────────────────────────────── */
+@media (max-width: 680px) {
+  .section {
+    padding: 24px 16px;
+  }
+
+  .hide-mobile {
+    display: none !important;
+  }
+}
